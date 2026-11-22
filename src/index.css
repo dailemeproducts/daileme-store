@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
+@import "tailwindcss";
+
+* {
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+/* للمتصفحات الحديثة و Firefox */
+* {
+  scrollbar-width: thin;
+  /* scrollbar-color: #ffffff50 #fdfbf715; */
+}
+
+/* حركة ملي الشريط من 0 لـ 100% */
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* الشريط بياخد 10 ثواني عشان يتملي */
+.progress-timer {
+  animation: fillBar 3s linear forwards;
+}
+
+/* الكلاس اللي بيجمد الشريط والوقت مكانه لما تعمل هوفر */
+.pause-timer {
+  animation-play-state: paused;
+}
