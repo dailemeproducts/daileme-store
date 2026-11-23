@@ -33,8 +33,8 @@ const GOVERNORATES = [
   "سوهاج",
 ];
 
-const BASE_PRICE = 350;
-const COD_SHIPPING_COST = 100;
+const BASE_PRICE = 370;
+const COD_SHIPPING_COST = 80;
 const ONLINE_SHIPPING_COST = 60;
 const PAYMENT_PHONE = "01555972563";
 const PAYMENT_RECIPIENT = "رمضان";
@@ -77,34 +77,20 @@ export default function Section4Order() {
     setTimeout(() => setIsPhoneCopied(false), 2000);
   };
 
-  // حساب نسبة الخصم حسب الكمية
-  const getDiscountRate = (qty) => {
-    if (qty === 1) return 0;
-    if (qty === 2) return 0.1; // 10%
-    if (qty === 3) return 0.15; // 15%
-    return 0.2; // 20% لـ 4 بوكسات فما فوق
-  };
-
-  const discountRate = getDiscountRate(formData.quantity);
-  const discountPercentage = discountRate * 100;
-  const unitPriceAfterDiscount = Math.round(BASE_PRICE * (1 - discountRate));
-  const originalSubtotal = BASE_PRICE * formData.quantity;
-  const discountedSubtotal = unitPriceAfterDiscount * formData.quantity;
-
-  // حساب الشحن بناءً على الكمية وطريقة الدفع
-  const isFreeShipping = formData.quantity >= 4;
+  // حساب الأسعار والشحن (سعر البوكس ثابت + شحن مجاني لبوكسين فأكثر)
+  const subtotal = BASE_PRICE * formData.quantity;
+  const isFreeShipping = formData.quantity >= 2;
   const baseShippingForMethod =
     formData.payment === "Online" ? ONLINE_SHIPPING_COST : COD_SHIPPING_COST;
   const currentShippingCost = isFreeShipping ? 0 : baseShippingForMethod;
-  const shippingSaved =
-    !isFreeShipping && formData.payment === "Online"
+
+  const totalSaved = isFreeShipping
+    ? COD_SHIPPING_COST
+    : formData.payment === "Online"
       ? COD_SHIPPING_COST - ONLINE_SHIPPING_COST
       : 0;
 
-  const productSaved = originalSubtotal - discountedSubtotal;
-  const totalSaved =
-    productSaved + (isFreeShipping ? COD_SHIPPING_COST : shippingSaved);
-  const finalTotal = discountedSubtotal + currentShippingCost;
+  const finalTotal = subtotal + currentShippingCost;
 
   // رابط واتساب جاهز بالرسالة وكود الطلب
   const whatsappMessage = encodeURIComponent(
@@ -211,7 +197,7 @@ export default function Section4Order() {
               {
                 item_id: "ATHAR-BOX-01",
                 item_name: "بوكس أثر",
-                price: unitPriceAfterDiscount,
+                price: BASE_PRICE,
                 quantity: formData.quantity,
               },
             ],
@@ -238,6 +224,7 @@ export default function Section4Order() {
       setIsSubmitting(false);
     }
   };
+
   return (
     <div
       id="order-now"
@@ -390,7 +377,7 @@ export default function Section4Order() {
                 <span className="font-black text-[#4C3B78]">أثر</span>
               </h2>
               <p className="text-gray-500 text-sm mt-2">
-                خصم يصل إلى 20% + شحن مجاني عند طلب 4 بوكسات فأكثر 🔥
+                شحن مجاني عند طلب بوكسين فأكثر 🚚✨
               </p>
             </div>
 
@@ -413,12 +400,85 @@ export default function Section4Order() {
                   autoComplete="off"
                 />
 
-                {/* 1. عداد الكمية */}
+                {/* 1. اختيار الكمية (زرارين سريعين + عداد حر) */}
                 <div className="space-y-3">
                   <label className="text-sm font-semibold text-[#1E252D] block">
-                    حدد الكمية:
+                    اختر الباقة أو حدد الكمية:
                   </label>
 
+                  {/* زرارين الاختيار السريع (بوكس 1 vs بوكسين) */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setQuantity(1)}
+                      className={`text-right p-3.5 rounded-2xl border-2 transition-all cursor-pointer ${
+                        formData.quantity === 1
+                          ? "border-[#4C3B78] bg-[#FAF6F0] shadow-xs"
+                          : "border-gray-200 bg-white hover:border-[#8879B3]/60"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold text-sm text-[#1E252D]">
+                          بوكس واحد
+                        </span>
+                        <span
+                          className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                            formData.quantity === 1
+                              ? "border-[#4C3B78]"
+                              : "border-gray-300"
+                          }`}
+                        >
+                          {formData.quantity === 1 && (
+                            <span className="w-2 h-2 rounded-full bg-[#4C3B78]" />
+                          )}
+                        </span>
+                      </div>
+                      <p className="font-black text-lg text-[#4C3B78] mt-1">
+                        {BASE_PRICE} ج.م
+                      </p>
+                      <p className="text-[11px] text-gray-500 mt-0.5">
+                        + مصاريف الشحن
+                      </p>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setQuantity(2)}
+                      className={`relative text-right p-3.5 rounded-2xl border-2 transition-all cursor-pointer ${
+                        formData.quantity === 2
+                          ? "border-[#4C3B78] bg-[#FAF6F0] shadow-xs"
+                          : "border-gray-200 bg-white hover:border-[#8879B3]/60"
+                      }`}
+                    >
+                      <span className="absolute -top-2.5 left-3 bg-green-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
+                        شحن مجاني 🎉
+                      </span>
+                      <div className="flex items-center justify-between">
+                        <span className="font-bold text-sm text-[#1E252D]">
+                          بوكسين (2)
+                        </span>
+                        <span
+                          className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                            formData.quantity === 2
+                              ? "border-[#4C3B78]"
+                              : "border-gray-300"
+                          }`}
+                        >
+                          {formData.quantity === 2 && (
+                            <span className="w-2 h-2 rounded-full bg-[#4C3B78]" />
+                          )}
+                        </span>
+                      </div>
+                      <p className="font-black text-lg text-[#4C3B78] mt-1">
+                        {BASE_PRICE * 2} ج.م
+                      </p>
+                      <p className="text-[11px] font-semibold text-green-700 mt-0.5">
+                        توفير {COD_SHIPPING_COST} ج.م شحن
+                      </p>
+                    </button>
+                  </div>
+
+                  {/* عداد الكمية الحر */}
                   <div className="flex items-center justify-between bg-[#FAF6F0] px-4 py-3 rounded-2xl border border-[#8879B3]/20">
                     <div className="text-sm flex flex-wrap items-center gap-1.5">
                       <span className="font-semibold text-[#1E252D]">
@@ -577,7 +637,7 @@ export default function Section4Order() {
                     >
                       {!isFreeShipping && (
                         <span className="absolute -top-2.5 left-3 bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
-                          خصم 40% على الشحن
+                          خصم 25% على الشحن
                         </span>
                       )}
                       <input
@@ -634,16 +694,7 @@ export default function Section4Order() {
                       <span className="text-gray-600">
                         سعر {formData.quantity} بوكس:
                       </span>
-                      <div className="flex items-center gap-1.5">
-                        {productSaved > 0 && (
-                          <span className="text-xs text-gray-400 line-through">
-                            {originalSubtotal} ج.م
-                          </span>
-                        )}
-                        <span className="font-bold">
-                          {discountedSubtotal} ج.م
-                        </span>
-                      </div>
+                      <span className="font-bold">{subtotal} ج.م</span>
                     </div>
 
                     <div className="flex items-center justify-between">
@@ -781,14 +832,7 @@ export default function Section4Order() {
 
             <div className="flex justify-between">
               <span className="text-gray-600">سعر البوكس:</span>
-              <span className="font-bold">
-                {unitPriceAfterDiscount} ج.م{" "}
-                {discountPercentage > 0 && (
-                  <span className="text-xs text-green-600">
-                    (خصم {discountPercentage}%)
-                  </span>
-                )}
-              </span>
+              <span className="font-bold">{BASE_PRICE} ج.م</span>
             </div>
 
             <div className="flex justify-between">
