@@ -16,10 +16,10 @@ export default function AnnouncementBar() {
       className="fixed top-20 inset-x-0 z-40 h-9 bg-[#4C3B78] hover:bg-[#3f3164] text-[#FAF6F0] flex items-center justify-center px-3 shadow-sm transition-colors cursor-pointer select-none"
     >
       <p className="text-[11px] sm:text-sm font-semibold tracking-wide truncate text-center">
-        خصم <span className="text-[#F49474] font-black">40%</span> على الشحن
-        للدفع الأونلاين ⚡ | خصم حتى{" "}
-        <span className="text-[#F49474] font-black">20%</span> وشحن مجاني لـ 4
-        بوكسات
+        <span className="text-[#F49474] font-black">شحن مجاني</span> عند طلب
+        بوكسين فأكثر 🚚 | خصم{" "}
+        <span className="text-[#F49474] font-black">25%</span> على الشحن للدفع
+        الأونلاين ⚡
       </p>
     </div>
   );
