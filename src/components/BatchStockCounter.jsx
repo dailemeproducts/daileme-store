@@ -32,7 +32,7 @@ export default function BatchStockCounter({ scriptUrl }) {
       <div className="flex items-center justify-between gap-2 mb-2">
         <span className="text-xs font-bold text-[#4C3B78] flex items-center gap-1.5">
           <span className="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-          حجز الدفعة الأولى (سعر الإطلاق 350 ج.م)
+          حجز الدفعة الأولى (سعر الإطلاق 370 ج.م)
         </span>
         <span className="text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-[#4C3B78] text-[#FAF6F0]">
           متبقي {stock.remaining} من {stock.total}

@@ -52,7 +52,7 @@ export default function StickyCTA({ formId = "order-now" }) {
             بوكس أثر (الدفعة الأولى)
           </span>
           <span className="text-lg font-extrabold text-[#4C3B78] leading-tight">
-            350 ج.م
+            370 ج.م
           </span>
         </div>
 
