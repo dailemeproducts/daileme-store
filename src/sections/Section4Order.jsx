@@ -720,7 +720,7 @@ export default function Section4Order() {
                   </button>
 
                   <p className="text-[11px] text-center text-gray-500">
-                    التوصيل خلال 2–4 أيام عمل 🚚
+                    التوصيل خلال 7 أيام عمل 🚚
                   </p>
                 </div>
               </div>
