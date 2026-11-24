@@ -230,7 +230,7 @@ export default function Section4Order() {
     <div
       id="order-now"
       dir="rtl"
-      className="w-full h-full py-6 px-3 sm:px-4 flex items-center justify-center relative"
+      className="w-full min-h-full py-6 px-3 sm:px-4 flex items-center justify-center relative"
     >
       <div className="w-full max-w-4xl bg-white rounded-2xl shadow-lg border border-[#8879B3]/20 p-4 sm:p-6">
         {isSubmitted ? (
