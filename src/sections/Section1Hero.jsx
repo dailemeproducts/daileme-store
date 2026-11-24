@@ -70,7 +70,7 @@ export default function Section1Hero() {
             href="#order-now"
             className="w-full sm:w-auto text-center px-6 py-4 bg-[#4C3B78] hover:bg-[#3a2c5e] active:scale-[0.98] text-white font-bold text-base sm:text-lg rounded-xl shadow-lg shadow-[#4C3B78]/20 transition-all cursor-pointer flex gap-2 items-center justify-center"
           >
-            <span >اطلب الآن - 350 ج.م</span>
+            <span >اطلب الآن - 370 ج.م</span>
             <span className="line-through font-medium text-white/60 text-sm">
               400 ج.م
             </span>{" "}
