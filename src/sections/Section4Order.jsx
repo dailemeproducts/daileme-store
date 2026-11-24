@@ -279,7 +279,7 @@ export default function Section4Order() {
 
                 <div className="bg-white p-3 rounded-lg border border-gray-200 space-y-1.5">
                   <p className="text-[11px] text-gray-500">
-                    محفظة إلكترونية أو إنستا باي ({PAYMENT_RECIPIENT}):
+                    محفظة إلكترونية ({PAYMENT_RECIPIENT}):
                   </p>
                   <div className="flex items-center justify-center gap-2">
                     <span
@@ -779,7 +779,7 @@ export default function Section4Order() {
               <span className="font-bold text-[#4C3B78]">
                 {formData.payment === "COD"
                   ? "عند الاستلام 💵"
-                  : "أونلاين (كاش / إنستا باي) 📱"}
+                  : "أونلاين (محفظة الكترونية) 📱"}
               </span>
             </div>
           </div>
