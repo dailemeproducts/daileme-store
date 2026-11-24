@@ -719,9 +719,9 @@ export default function Section4Order() {
                     مراجعة البيانات 🧾
                   </button>
 
-                  <p className="text-[11px] text-center text-gray-500">
+                  {/* <p className="text-[11px] text-center text-gray-500">
                     التوصيل خلال 7 أيام عمل 🚚
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </form>
