@@ -7,11 +7,11 @@ const sticking_a_skull_sticker_on_end_week_paper =
   "/assets/images/athar/sticking-a-skull-sticker-on-end-week-paper.jpg";
 const holding_athar_on_sky_yellow_green_theme =
   "/assets/images/athar/holding-athar-on-sky-yellow-green-theme.jpeg";
-const athar_all_contents = "/assets/images/athar/athar-all-contents.png";
+const athar_all_contents = "/assets/images/athar/athar-all-contents.jpg";
 const athar_month_page_bunishments =
   "/assets/images/athar/athar-month-beginning-bunishments.jpeg";
 const athar_day_2_facing_pages =
-  "/assets/images/athar/athar-day-2-facing-pages.jpeg";
+  "/assets/images/athar/athar-day-2-facing-pages.png";
 
 export {
   daileme_logo_png_colored,
