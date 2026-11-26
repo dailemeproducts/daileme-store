@@ -26,11 +26,6 @@ export default function Section2Carousel() {
       caption: "تصميم مريح للعين يفتح نفسك تخطط ليومك في أي وقت وفي أي مكان ✨",
     },
     {
-      url: athar_all_contents,
-      caption:
-        "كل اللي تحتاجه عشان تبدأ رحلتك وتنظم أيامك في بوكس واحد متكامل ✨",
-    },
-    {
       url: athar_and_pen_and_bookmark,
       caption:
         "تقسيمة يومية ذكية تجمع بين التخطيط الصارم على اليمين والكتابة الحرة على الشمال ✨",
@@ -39,6 +34,11 @@ export default function Section2Carousel() {
       url: athar_monsters_page_stickers,
       caption:
         "حول عاداتك السلبية لوحوش حقيقية، واحتفل بانتصارك عليها كل أسبوع 🏆",
+    },
+    {
+      url: athar_all_contents,
+      caption:
+        "كل اللي تحتاجه عشان تبدأ رحلتك وتنظم أيامك في بوكس واحد متكامل ✨",
     },
     // {
     //   url: athar_month_page_bunishments,
