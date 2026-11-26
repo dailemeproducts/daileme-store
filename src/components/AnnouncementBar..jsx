@@ -18,12 +18,12 @@ export default function AnnouncementBar() {
       <p className="text-[11px] sm:text-sm font-semibold tracking-wide truncate text-center">
         <span className="me-1">
           <span className="text-[#F49474] font-black">شحن مجاني</span> للطلبات
-          فوق 1000 ج |
+          فوق 1000 ج
         </span>
-        <span>
+        {/* <span>
           <span className="text-[#F49474] font-black me-1">خصم 20ج</span> 
           للدفع الأونلاين ⚡
-        </span>
+        </span> */}
       </p>
     </div>
   );
