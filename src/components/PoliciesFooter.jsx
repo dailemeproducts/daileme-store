@@ -33,7 +33,6 @@ const POLICIES_DATA = {
     ],
   },
 };
-
 export default function PoliciesFooter() {
   const [activePolicy, setActivePolicy] = useState(null);
 
