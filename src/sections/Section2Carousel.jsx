@@ -40,10 +40,10 @@ export default function Section2Carousel() {
       caption:
         "حول عاداتك السلبية لوحوش حقيقية، واحتفل بانتصارك عليها كل أسبوع 🏆",
     },
-    {
-      url: athar_month_page_bunishments,
-      caption: "صفحة بداية الشهر: اكتب أهدافك وامضي على عهد الالتزام مع نفسك",
-    },
+    // {
+    //   url: athar_month_page_bunishments,
+    //   caption: "صفحة بداية الشهر: اكتب أهدافك وامضي على عهد الالتزام مع نفسك",
+    // },
   ];
 
   const nextSlide = () => {
