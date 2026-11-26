@@ -16,6 +16,8 @@ const athar_and_pen_and_bookmark =
   "/assets/images/athar/athar_and_pen_and_bookmark.jpg";
 const athar_monsters_page_stickers =
   "/assets/images/athar/athar_monsters_page_stickers.jpg";
+const two_athar_covers_message =
+  "/assets/images/athar/2-athar-covers-message.jpg";
 
 export {
   daileme_logo_png_colored,
@@ -28,4 +30,5 @@ export {
   athar_day_2_facing_pages,
   athar_and_pen_and_bookmark,
   athar_monsters_page_stickers,
+  two_athar_covers_message,
 };

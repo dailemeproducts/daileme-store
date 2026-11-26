@@ -13,6 +13,7 @@ import {
   athar_day_2_facing_pages,
   athar_monsters_page_stickers,
   athar_and_pen_and_bookmark,
+  two_athar_covers_message,
 } from "../assets";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -23,27 +24,24 @@ export default function Section2Carousel() {
   const images = [
     {
       url: hand_holding_athar,
-      caption: "تصميم مريح للعين يفتح نفسك تخطط ليومك في أي وقت وفي أي مكان ✨",
+      caption: "أثر.. رفيقتك في كل خطوة.",
+    },
+    {
+      url: two_athar_covers_message,
+      caption: "غلافان مختلفان، وبداية واحدة نحو أهدافك.",
     },
     {
       url: athar_and_pen_and_bookmark,
-      caption:
-        "تقسيمة يومية ذكية تجمع بين التخطيط الصارم على اليمين والكتابة الحرة على الشمال ✨",
+      caption: "اربط كل مهمة بوقتها، وخلي لكل ساعة هدفها.",
     },
     {
       url: athar_monsters_page_stickers,
-      caption:
-        "حول عاداتك السلبية لوحوش حقيقية، واحتفل بانتصارك عليها كل أسبوع 🏆",
+      caption: "مش كل الوحوش بتخوف.. بعضها عادات محتاج تتغلب عليها.",
     },
     {
       url: athar_all_contents,
-      caption:
-        "كل اللي تحتاجه عشان تبدأ رحلتك وتنظم أيامك في بوكس واحد متكامل ✨",
+      caption: "كل ما تحتاجه لتبدأ رحلتك، في صندوق واحد.",
     },
-    // {
-    //   url: athar_month_page_bunishments,
-    //   caption: "صفحة بداية الشهر: اكتب أهدافك وامضي على عهد الالتزام مع نفسك",
-    // },
   ];
 
   const nextSlide = () => {
