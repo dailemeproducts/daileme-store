@@ -12,6 +12,10 @@ const athar_month_page_bunishments =
   "/assets/images/athar/athar-month-beginning-bunishments.jpeg";
 const athar_day_2_facing_pages =
   "/assets/images/athar/athar-day-2-facing-pages.png";
+const athar_and_pen_and_bookmark =
+  "/assets/images/athar/athar_and_pen_and_bookmark.jpg";
+const athar_monsters_page_stickers =
+  "/assets/images/athar/athar_monsters_page_stickers.jpg";
 
 export {
   daileme_logo_png_colored,
@@ -22,4 +26,6 @@ export {
   athar_all_contents,
   athar_month_page_bunishments,
   athar_day_2_facing_pages,
+  athar_and_pen_and_bookmark,
+  athar_monsters_page_stickers,
 };
