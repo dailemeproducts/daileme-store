@@ -63,16 +63,14 @@ export default function Section3FAQ() {
                   <ChevronDown />
                 </span>
               </button>
-
-              {/* حاوية الإجابة المتحركة بالـ CSS Grid */}
+              {/* حاوية الإجابة المتحركة */}
               <div
                 className={`grid transition-all duration-300 ease-in-out ${
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                 }`}
               >
-                {/* الديف الداخلي المقفول عليه الـ overflow */}
-                <div className="overflow-hidden bg-white pt-4">
-                  <p className="p-5 pt-0 text-[#1E252D]/80 leading-relaxed text-sm md:text-base border-[#8879B3]/10">
+                <div className="min-h-0 overflow-hidden bg-white">
+                  <p className="px-5 pt-4 pb-5 text-[#1E252D]/80 leading-relaxed text-sm md:text-base">
                     {faq.a}
                   </p>
                 </div>
